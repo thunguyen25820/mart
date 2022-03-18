@@ -1,0 +1,50 @@
+.container{
+    display: flex;
+    .slider{
+        height: 350px;
+        width: 85%;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        z-index: 0;
+        align-items: center;
+        margin-top: 10px;
+        img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .control{
+            position: absolute;
+            font-size: 25px;
+            height: 45px;
+            width: 45px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: rgba(179, 176, 176, 0.2);
+            color: white;
+            cursor: pointer;
+            &.next{
+                right: 0;
+            }
+        }
+    }
+}
+
+.product{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    .product-title{
+        width: 20%;
+        background: linear-gradient(#00917a,#00483d);
+        padding: 10px;
+        color: white;
+        border-radius: 10px;
+        display: flex;
+        text-align: center;
+    }
+}

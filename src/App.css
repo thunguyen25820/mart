@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 1px solid gray; }
+
+body {
+  background: #f4f4f4;
+  padding: 0 100px; }
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 99; }
+  .header .header-container {
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    background: #deebea; }
+    .header .header-container .logo {
+      font-size: 30px;
+      font-weight: bold;
+      color: #00483d;
+      margin-right: 20px;
+      text-shadow: 2px 2px 2px #00917a; }
+    .header .header-container .search {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      border: none;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
+      overflow: hidden; }
+      .header .header-container .search input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        outline: none;
+        font-size: 16px; }
+      .header .header-container .search i {
+        width: 7%;
+        height: 100%;
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(#00917a, #00483d);
+        color: white;
+        border-radius: 15px; }
+    .header .header-container .cart {
+      font-size: 40px;
+      margin-left: 20px;
+      color: #00483d; }
+  .header .nav {
+    display: flex;
+    background: linear-gradient(#00917a, #00483d);
+    border-radius: 5px; }
+    .header .nav ul {
+      display: flex; }
+      .header .nav ul li {
+        text-decoration: none;
+        list-style: none;
+        color: white;
+        padding: 5px 15px; }
+
+.product-card {
+  width: 280px;
+  height: 350px;
+  margin-right: 20px;
+  margin-top: 20px;
+  position: relative;
+  padding: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+  .product-card .card-heart {
+    height: 35px;
+    width: 35px;
+    font-size: 25px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    left: 10px; }
+  .product-card .card-heart, .product-card .card-sale {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px; }
+  .product-card .card-sale {
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    background: orange;
+    color: white;
+    border-radius: 50%;
+    font-size: 13px;
+    flex-direction: column; }
+  .product-card .card-image {
+    margin-top: 20px;
+    height: 72%; }
+  .product-card .card-title {
+    font-size: 18px;
+    transition: 0.1s;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -10px;
+    margin-bottom: 5px; }
+  .product-card .card-pricesale, .product-card .card-price {
+    position: absolute; }
+  .product-card .card-pricesale {
+    font-weight: bold;
+    font-size: 20px;
+    color: #0ea875;
+    left: 15px; }
+  .product-card .card-price {
+    right: 75px; }
+
+.footer {
+  background: linear-gradient(#00917a, #00483d);
+  color: white;
+  border-radius: 10px 10px 0 0; }
+  .footer .policy {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; }
+    .footer .policy div {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 25%;
+      border-right: 2px solid white;
+      cursor: pointer; }
+      .footer .policy div i {
+        font-size: 25px;
+        margin-bottom: 5px; }
+  .footer .footer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0; }
+    .footer .footer-container span {
+      margin-bottom: 5px; }
+
+.category {
+  width: 20%;
+  padding: 5px 10px; }
+
+.container {
+  display: flex; }
+  .container .slider {
+    height: 350px;
+    width: 85%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    z-index: 0;
+    align-items: center;
+    margin-top: 10px; }
+    .container .slider img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover; }
+    .container .slider .control {
+      position: absolute;
+      font-size: 25px;
+      height: 45px;
+      width: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background: rgba(179, 176, 176, 0.2);
+      color: white;
+      cursor: pointer; }
+      .container .slider .control.next {
+        right: 0; }
+
+.product {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px; }
+  .product .product-title {
+    width: 20%;
+    background: linear-gradient(#00917a, #00483d);
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    text-align: center; }
