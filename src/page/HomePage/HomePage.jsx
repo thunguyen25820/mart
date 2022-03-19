@@ -1,9 +1,20 @@
-import Header from "../common/Header";
-import Footer from "../common/Footer";
-import Category from "../common/Category";
-import CardProduct from "../common/CardProduct";
+import React, { useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux";
+import { constant } from "../../constants";
+import { categoryAction } from "../../actions/categoryAction";
+import Header from "../../common/Header";
+import Footer from "../../common/Footer";
+import Category from "../../common/Category";
+import CardProduct from "../../common/CardProduct";
 
 export default function HomePage(){
+    const dispatch = useDispatch();
+    const listCategory = useSelector(store => store.Category.listCategory);
+    useEffect(() => {
+        if(listCategory.status === constant.LOADING){
+            dispatch(categoryAction.getCategory());
+        }
+    })
     return(
         <>
         <Header />
