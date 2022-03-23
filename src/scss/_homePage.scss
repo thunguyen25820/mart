@@ -1,7 +1,7 @@
 .container{
     display: flex;
     .slider{
-        height: 350px;
+        height: 100%;
         width: 85%;
         border-radius: 10px;
         overflow: hidden;
@@ -9,7 +9,7 @@
         position: relative;
         z-index: 0;
         align-items: center;
-        margin-top: 10px;
+        margin: 10px 15px;
         img{
             height: 100%;
             width: 100%;
@@ -18,8 +18,8 @@
         .control{
             position: absolute;
             font-size: 25px;
-            height: 45px;
-            width: 45px;
+            height: 80px;
+            width: 80px;
             display: flex;
             justify-content: center;
             align-items: center;

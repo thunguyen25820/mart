@@ -9,9 +9,9 @@ import CardProduct from "../../common/CardProduct";
 
 export default function HomePage(){
     const dispatch = useDispatch();
-    const listCategory = useSelector(store => store.Category.listCategory);
+    const listCategory = useSelector(store => store.category.listCategory);
     useEffect(() => {
-        if(listCategory.status === constant.LOADING){
+        if(listCategory.state === constant.LOADING){
             dispatch(categoryAction.getCategory());
         }
     })
@@ -23,10 +23,10 @@ export default function HomePage(){
             <div className="slider">
                 <img src="./image/la_roche_posay.jpeg" alt="" />
                 <div className="control prev">
-                    <i class='bx bx-chevron-left-circle'></i>
+                    <i className='bx bx-chevron-left-circle'></i>
                 </div>
                 <div className="control next">
-                    <i class='bx bx-chevron-right-circle'></i>
+                    <i className='bx bx-chevron-right-circle'></i>
                 </div>
             </div>
         </div>

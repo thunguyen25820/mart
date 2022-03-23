@@ -1,5 +1,8 @@
+import { useSearchParams } from "react-router-dom";
+export default function CardProduct(property){
+    let{} = property;
+    const [params, setParam] = useSearchParams;
 
-export default function CardProduct(){
     return(
         <div className="product-card">
             <div className="card-heart">

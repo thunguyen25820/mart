@@ -5,11 +5,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  border: 1px solid gray; }
+  box-sizing: border-box; }
 
 body {
-  background: #f4f4f4;
+  background: #dedede;
   padding: 0 70px; }
 
 .header {
@@ -20,24 +19,24 @@ body {
     padding: 20px 40px;
     display: flex;
     justify-content: space-between;
-    background: #edeeee; }
+    background: white; }
     .header .header-container .logo {
-      font-size: 30px;
+      font-size: 35px;
       font-weight: bold;
       color: #00483d;
-      margin-right: 20px;
+      margin-left: 50px;
       text-shadow: 2px 2px 2px #00917a; }
     .header .header-container .search {
-      width: 100%;
+      width: 60%;
       display: flex;
       justify-content: space-between;
       border: none;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
       overflow: hidden; }
       .header .header-container .search input {
         width: 100%;
-        padding: 12px;
+        padding: 0 10px;
         border: none;
         outline: none;
         font-size: 16px; }
@@ -50,22 +49,72 @@ body {
         align-items: center;
         background: var(--primary--color);
         color: white;
-        border-radius: 15px; }
+        border-radius: 10px; }
     .header .header-container .cart {
       font-size: 40px;
-      margin-left: 20px;
+      margin-right: 50px;
       color: #00483d; }
   .header .nav {
     display: flex;
+    justify-content: space-between;
     background: linear-gradient(#00917a, #00483d);
     border-radius: 5px; }
-    .header .nav ul {
-      display: flex; }
-      .header .nav ul li {
-        text-decoration: none;
-        list-style: none;
+    .header .nav .nav-menu {
+      height: 100%;
+      margin-left: 85px; }
+      .header .nav .nav-menu ul {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
         color: white;
-        padding: 5px 15px; }
+        cursor: pointer; }
+        .header .nav .nav-menu ul i {
+          height: 100%;
+          font-size: 40px; }
+        .header .nav .nav-menu ul i:hover {
+          color: orange; }
+        .header .nav .nav-menu ul li {
+          text-decoration: none;
+          list-style: none;
+          padding: 5px 15px;
+          margin-left: 10px; }
+        .header .nav .nav-menu ul li:hover {
+          border-bottom: 2px solid orange; }
+    .header .nav .nav-login {
+      display: flex;
+      align-items: center;
+      margin-right: 50px; }
+      .header .nav .nav-login button {
+        height: 100%;
+        border: none;
+        outline: none;
+        color: white;
+        background: transparent;
+        font-size: 17px; }
+      .header .nav .nav-login .loginbtn {
+        margin-right: 30px; }
+      .header .nav .nav-login button:hover {
+        color: orange; }
+
+.category {
+  width: 280px;
+  height: 100%;
+  border-radius: 5px;
+  background: white;
+  margin-top: 10px; }
+  .category .category-card {
+    display: flex;
+    padding: 5px 10px; }
+    .category .category-card img {
+      height: 35px;
+      width: 35px; }
+    .category .category-card .title {
+      align-items: center;
+      padding: 10px 0 0 10px;
+      list-style: none;
+      text-decoration-line: none; }
+  .category .category-card:hover {
+    box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.2); }
 
 .product-card {
   width: 280px;
@@ -149,14 +198,10 @@ body {
     .footer .footer-container span {
       margin-bottom: 5px; }
 
-.category {
-  width: 20%;
-  padding: 5px 10px; }
-
 .container {
   display: flex; }
   .container .slider {
-    height: 350px;
+    height: 100%;
     width: 85%;
     border-radius: 10px;
     overflow: hidden;
@@ -164,7 +209,7 @@ body {
     position: relative;
     z-index: 0;
     align-items: center;
-    margin-top: 10px; }
+    margin: 10px 15px; }
     .container .slider img {
       height: 100%;
       width: 100%;
@@ -172,8 +217,8 @@ body {
     .container .slider .control {
       position: absolute;
       font-size: 25px;
-      height: 45px;
-      width: 45px;
+      height: 80px;
+      width: 80px;
       display: flex;
       justify-content: center;
       align-items: center;

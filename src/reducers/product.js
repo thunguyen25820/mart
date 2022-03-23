@@ -1,30 +1,28 @@
-import { constant } from "../constants";
-
+import { constant } from "../constants"
 const initState = {
-    listCategory: {
-        state: constant.LOADING
+    listProduct: {
+        state: constant.LOADING,
     },
-};
-
-export function category(state = initState, action){
+}
+export function product(state = initState, action){
     switch(action.type){
-        case constant.GET_CATEGORY_SUCCESS:{
+        case constant.GET_PRODUCTS_SUCCESS:{
             return{
                 ...state,
-                listCategory: {
+                listProduct: {
                     state: constant.SUCCESS,
                     data: action.data,
-                },
-            };
+                }
+            }
         }
-        case constant.GET_CATEGORY_FAILURE:{
+        case constant.GET_PRODUCTS_FAILURE:{
             return{
                 ...state,
-                listCategory:{
+                listProduct: {
                     state: constant.FAILURE,
                     data: [],
-                },
-            };
+                }
+            }
         }
         default:
             return state;

@@ -14,15 +14,20 @@ export default function Header(){
                 </div>
             </div>
             <div className="nav">
-                <div className="category">
-                    <i class='bx bx-menu' ></i>
+                <div className="nav-menu">
+                    <ul>
+                        <i class='bx bx-menu' ></i>
+                        <li>Trang chủ</li>
+                        <li>Sản phẩm</li>
+                        <li>Tin tức</li>
+                        <li>Voucher</li>
+                    </ul>
                 </div>
-                <ul>
-                    <li>Trang chủ</li>
-                    <li>Sản phẩm</li>
-                    <li>Tin tức</li>
-                    <li>Voucher</li>
-                </ul>
+                <div className="nav-login">
+                    <button className="loginbtn">Đăng nhập</button>
+                    <button className="signinbtn">Đăng ký</button>
+                </div>
+                
             </div>
         </div>
     );
