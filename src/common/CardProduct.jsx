@@ -1,7 +1,6 @@
-import { useSearchParams } from "react-router-dom";
+
 export default function CardProduct(property){
-    let{} = property;
-    const [params, setParam] = useSearchParams;
+    let{name,pricesale,images} = property;
 
     return(
         <div className="product-card">
@@ -13,13 +12,13 @@ export default function CardProduct(property){
                 <p>OFF</p>
             </div>
             <div className="card-image">
-                <img src="./image/sonbbia.png" alt=""/>
+                <img src={images} alt=""/>
             </div>
             <div className="card-title">
-                Son Kem Lì Bbia Last Velvet Lip Tint Version 
+               {name}
             </div>
             <div className="card-pricesale">
-                144000<sup>đ</sup></div>
+                {pricesale}<sup>đ</sup></div>
             <div className="card-price">
                 <s>207000 <sup>đ</sup></s>
             </div>

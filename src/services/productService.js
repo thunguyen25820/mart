@@ -4,7 +4,7 @@ function getProduct(){
         method: "GET",
     }
 
-    return fetch(constant.URL_API + "product/", requestObj)
+    return fetch(constant.URL_API + "/product", requestObj)
             .then(res => res.json())
             .then(data => {
                 return data;

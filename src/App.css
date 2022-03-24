@@ -229,11 +229,11 @@ body {
       .container .slider .control.next {
         right: 0; }
 
-.product {
+.product-section {
   width: 100%;
   margin-top: 20px;
   margin-bottom: 30px; }
-  .product .product-title {
+  .product-section .product-title {
     width: 20%;
     background: linear-gradient(#00917a, #00483d);
     padding: 10px;

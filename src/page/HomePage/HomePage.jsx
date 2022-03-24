@@ -5,14 +5,19 @@ import { categoryAction } from "../../actions/categoryAction";
 import Header from "../../common/Header";
 import Footer from "../../common/Footer";
 import Category from "../../common/Category";
-import CardProduct from "../../common/CardProduct";
+import ProductSection from "./child/ProductSection";
+import { productAction } from "../../actions/productAction";
 
 export default function HomePage(){
     const dispatch = useDispatch();
     const listCategory = useSelector(store => store.category.listCategory);
+    const listProduct = useSelector(store => store.product.listProduct)
     useEffect(() => {
         if(listCategory.state === constant.LOADING){
             dispatch(categoryAction.getCategory());
+        }
+        if(listProduct.state === constant.LOADING){
+            dispatch(productAction.getProduct());
         }
     })
     return(
@@ -30,19 +35,7 @@ export default function HomePage(){
                 </div>
             </div>
         </div>
-        <div className="product">
-            <div className="product-title">
-                <span>Sản phẩm nổi bật</span>
-            </div>
-            <CardProduct />
-        </div>
-        <div className="product">
-            <div className="product-title">
-                <span>Sản phẩm mới</span>
-            </div>
-            <CardProduct />
-        </div>
-
+        {(!listProduct.data) ? <div></div> : <ProductSection title="ahihi" listProduct={listProduct.data}/>}
         <Footer />
         </>
     );
