@@ -1,3 +1,4 @@
+// header
 .header{
     position: sticky;
     top: 0;
@@ -101,8 +102,13 @@
         
     }
 }
-
+// header-mobile
+.nav-mobile{
+    display: none;
+}
+// danh muc san pham
 .category{
+    display: block;
     width: 280px;
     height: 100%;
     border-radius: 5px;
@@ -126,16 +132,20 @@
         box-shadow: inset 1px 1px 8px rgba(0,0,0,0.2);
     }
 }
+
+// card product 
 .product-card{
-    width: 280px;
+    width: 245px;
     height: 350px;
-    margin-right: 20px;
+    margin-left: 10px;
     margin-top: 20px;
     position: relative;
-    padding: 10px;
+    // padding: 10px;
     cursor: pointer;
+    background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     border-radius: 10px;
+    overflow: hidden;
     .card-heart{
         height: 35px;
         width: 35px;
@@ -164,20 +174,26 @@
     
     }
     .card-image{
-        margin-top: 20px;
-        height: 72%;
+        // position: absolute;
+        width: 100%;
+        height: 70%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+        }
+
     }
     .card-title{
-        font-size: 18px;
+        font-size: 1rem;
         transition: 0.1s;
         font-weight: bold;
         text-align: center;
-        margin-top: -10px;
-        margin-bottom: 5px;
+        margin-top: 5px;
     }
-
     .card-pricesale, .card-price{
         position: absolute;
+        bottom: 10px;
     }
     .card-pricesale{
         font-weight: bold;
@@ -186,15 +202,16 @@
         left: 15px;
     
     }
-    
     .card-price{
         right: 75px;
     }
 }
 
+// footer
 .footer{
     // position: sticky;
     // bottom: 0;
+    display: block;
     background: linear-gradient(#00917a,#00483d);
     color: white;
     border-radius: 10px 10px 0 0;
@@ -226,5 +243,65 @@
         span{
             margin-bottom: 5px;
         }
+    }
+}
+
+
+// mobile width < 740px
+@media only screen and (max-width: 46.1875em) {
+    .header{
+        width: 100%;
+        .header-container{
+            border-radius: 0 0 5px 5px;
+            .logo{
+                margin-left: unset;
+                font-size: 32px;
+            }
+            .search{
+                i{
+                    width: 15%;
+                }
+            }
+            .cart{
+                margin-right: unset;
+                font-size: 35px;
+            }
+            
+        }
+        .nav{
+            display: none;
+        }
+    }
+    .nav-mobile{
+        display: block;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        background: var(--primary--color);
+        display: flex;
+        justify-content: space-around;
+        color: white;
+        padding:  10px 5px;
+        box-shadow: 1px 1px 10px rgba(0,0,0,0.3);
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            i{
+                font-size: 1.5rem;
+            }
+            span{
+                font-size: 1rem;
+            }
+        }
+        div:hover{
+            color: orange;
+        }
+    }
+    .footer, .category{
+        display: none;
     }
 }

@@ -4,9 +4,8 @@ export default function ProductSection(props){
     let {title, listProduct} = props;
     function createCardProduct(listProduct){
         return listProduct.map(v=>(
-            <div className="products" key={v._id} >
-                <CardProduct key={v._id} id={v._id} name={v.name} pricesale={v.after_discount_price} images={v.images}/>
-            </div>
+            <CardProduct key={v._id} id={v._id} name={v.name} pricesale={v.after_discount_price} images={v.images}/>
+            
         ))
     }
     return (
@@ -14,7 +13,9 @@ export default function ProductSection(props){
             <div className="product-title">
                 <span>{title}</span>
             </div>
-            {createCardProduct(listProduct)}
+            <div className="products" >
+                {createCardProduct(listProduct)}
+            </div>
         </div>
     );
 }

@@ -11,6 +11,10 @@ body {
   background: #dedede;
   padding: 0 70px; }
 
+@media only screen and (max-width: 46.1875em) {
+  body {
+    padding: 0; } }
+
 .header {
   position: sticky;
   top: 0;
@@ -96,7 +100,11 @@ body {
       .header .nav .nav-login button:hover {
         color: orange; }
 
+.nav-mobile {
+  display: none; }
+
 .category {
+  display: block;
   width: 280px;
   height: 100%;
   border-radius: 5px;
@@ -117,15 +125,16 @@ body {
     box-shadow: inset 1px 1px 8px rgba(0, 0, 0, 0.2); }
 
 .product-card {
-  width: 280px;
+  width: 245px;
   height: 350px;
-  margin-right: 20px;
+  margin-left: 10px;
   margin-top: 20px;
   position: relative;
-  padding: 10px;
   cursor: pointer;
+  background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px; }
+  border-radius: 10px;
+  overflow: hidden; }
   .product-card .card-heart {
     height: 35px;
     width: 35px;
@@ -150,17 +159,21 @@ body {
     font-size: 13px;
     flex-direction: column; }
   .product-card .card-image {
-    margin-top: 20px;
-    height: 72%; }
+    width: 100%;
+    height: 70%; }
+    .product-card .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
   .product-card .card-title {
-    font-size: 18px;
+    font-size: 1rem;
     transition: 0.1s;
     font-weight: bold;
     text-align: center;
-    margin-top: -10px;
-    margin-bottom: 5px; }
+    margin-top: 5px; }
   .product-card .card-pricesale, .product-card .card-price {
-    position: absolute; }
+    position: absolute;
+    bottom: 10px; }
   .product-card .card-pricesale {
     font-weight: bold;
     font-size: 20px;
@@ -170,6 +183,7 @@ body {
     right: 75px; }
 
 .footer {
+  display: block;
   background: linear-gradient(#00917a, #00483d);
   color: white;
   border-radius: 10px 10px 0 0; }
@@ -197,6 +211,48 @@ body {
     padding: 20px 0; }
     .footer .footer-container span {
       margin-bottom: 5px; }
+
+@media only screen and (max-width: 46.1875em) {
+  .header {
+    width: 100%; }
+    .header .header-container {
+      border-radius: 0 0 5px 5px; }
+      .header .header-container .logo {
+        margin-left: unset;
+        font-size: 32px; }
+      .header .header-container .search i {
+        width: 15%; }
+      .header .header-container .cart {
+        margin-right: unset;
+        font-size: 35px; }
+    .header .nav {
+      display: none; }
+  .nav-mobile {
+    display: block;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 99;
+    background: var(--primary--color);
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    padding: 10px 5px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3); }
+    .nav-mobile div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer; }
+      .nav-mobile div i {
+        font-size: 1.5rem; }
+      .nav-mobile div span {
+        font-size: 1rem; }
+    .nav-mobile div:hover {
+      color: orange; }
+  .footer, .category {
+    display: none; } }
 
 .container {
   display: flex; }
@@ -241,3 +297,21 @@ body {
     border-radius: 10px;
     display: flex;
     text-align: center; }
+
+.products {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; }
+
+@media only screen and (max-width: 46.1875em) {
+  .container {
+    height: 250px; }
+    .container .slider {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      margin-top: 10px; }
+      .container .slider img {
+        width: 100%; }
+  .products {
+    width: 100%; } }

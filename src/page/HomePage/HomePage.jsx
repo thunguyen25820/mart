@@ -11,7 +11,7 @@ import { productAction } from "../../actions/productAction";
 export default function HomePage(){
     const dispatch = useDispatch();
     const listCategory = useSelector(store => store.category.listCategory);
-    const listProduct = useSelector(store => store.product.listProduct)
+    const listProduct = useSelector(store => store.product.listProduct);
     useEffect(() => {
         if(listCategory.state === constant.LOADING){
             dispatch(categoryAction.getCategory());
@@ -35,7 +35,10 @@ export default function HomePage(){
                 </div>
             </div>
         </div>
-        {(!listProduct.data) ? <div></div> : <ProductSection title="ahihi" listProduct={listProduct.data}/>}
+        {(!listProduct.data) ? <div></div> : 
+            <div className="products" >
+                <ProductSection title="ahihi" listProduct={listProduct.data}/>
+            </div>}
         <Footer />
         </>
     );
