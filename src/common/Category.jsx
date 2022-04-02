@@ -8,9 +8,10 @@ export default function Category(){
         ))
             
     } 
-    return(!listCategory.data ? <div></div> :
-        <div className="category">
-            {createCategory(listCategory.data)}
-        </div>
+    return(
+        !listCategory.data ? <div></div> :
+            <div className="category">
+                {createCategory(listCategory.data)}
+            </div>
     );
 }

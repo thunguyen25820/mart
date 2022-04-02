@@ -19,9 +19,9 @@ export default function CardProduct(property){
             </div>
             <div className="card-pricesale">
                 {pricesale}<sup>đ</sup></div>
-            <div className="card-price">
+            {/* <div className="card-price">
                 <s>207000 <sup>đ</sup></s>
-            </div>
+            </div> */}
         </div>
     );
 }

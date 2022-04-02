@@ -1,8 +1,8 @@
 import { constant } from "../constants"
-function getProduct(){
+function getHomeInfo(){
     const requestObj = {
         method: "GET",
-    }
+    };
 
     return fetch(constant.URL_API + "/home", requestObj)
             .then(res => res.json())
@@ -15,6 +15,6 @@ function getProduct(){
             })
 }
 
-export const productService = {
-    getProduct,
+export const appService = {
+    getHomeInfo,
 }
