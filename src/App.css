@@ -407,3 +407,45 @@ a {
         width: 100%; }
   .products {
     width: 100%; } }
+
+.maininfo {
+  display: flex;
+  width: 100%;
+  height: 600px;
+  margin: 20px 0;
+  border-radius: 5px;
+  background: white; }
+  .maininfo .maininfo-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border-right: 0.05px solid rgba(0, 0, 0, 0.1); }
+    .maininfo .maininfo-img img {
+      width: 70%;
+      height: 95%;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
+      border-radius: 5px; }
+  .maininfo .maininfo-container {
+    width: 60%;
+    padding: 25px; }
+    .maininfo .maininfo-container .maininfo-rating {
+      margin: 15px 0; }
+      .maininfo .maininfo-container .maininfo-rating span {
+        color: gray; }
+    .maininfo .maininfo-container .maininfo-price {
+      width: 70%;
+      padding: 15px;
+      border-radius: 5px;
+      background: rgba(0, 0, 0, 0.1); }
+      .maininfo .maininfo-container .maininfo-price span {
+        font-size: 2.3rem;
+        padding: 20px;
+        color: red; }
+    .maininfo .maininfo-container .maininfo-cart {
+      margin-top: 30px; }
+      .maininfo .maininfo-container .maininfo-cart button {
+        background: green;
+        padding: 10px 15px;
+        font-size: 1.2rem;
+        border-radius: 6px; }

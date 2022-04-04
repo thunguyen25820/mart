@@ -7,7 +7,7 @@ export default function Footer(){
                     <span>Điều khoản - Chính sách</span>
                 </div>
                 <div className="policy-return">
-                    <i class="fa-solid fa-arrow-rotate-left"></i>
+                    <i className='bx bx-rotate-left'></i>
                     <span>Chính sách đổi trả</span>
                 </div>
                 <div className="policy-support">

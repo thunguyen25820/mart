@@ -1,10 +1,10 @@
 import { constant } from "../constants"
 import { productService } from "../services/productService"
 
-function getProduct(){
+function getProductInfo(){
     console.log("hhhhhhhhhhhh");
     return dispatch => {
-        productService.getProduct().then(res => {
+        productService.getProductInfo().then(res => {
             if(res.status === constant.SUCCESS){
                 dispatch(success(res.data));
             }else{
@@ -15,16 +15,16 @@ function getProduct(){
     function success(data){
         console.log("success");
         return{
-            type: constant.GET_PRODUCTS_SUCCESS, data
+            type: constant.GET_PRODUCT_SUCCESS, data
         }
     }
     function failure(msg){
         return{
-            type: constant.GET_PRODUCTS_FAILURE, msg
+            type: constant.GET_PRODUCT_FAILURE, msg
         }
     }
 }
 
 export const productAction = {
-    getProduct,
+    getProductInfo,
 }
