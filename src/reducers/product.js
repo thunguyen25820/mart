@@ -5,6 +5,9 @@ const initState = {
     },
     productInfo: {
         state: constant.LOADING
+    },
+    productSimilar: {
+        state: constant.LOADING
     }
 }
 export function product(state = initState, action){
@@ -42,6 +45,24 @@ export function product(state = initState, action){
                 productInfo: {
                     state: constant.FAILURE,
                     data: {},
+                }
+            }
+        }
+        case constant.GET_PRODUCT_SIMILAR_SUCCESS:{
+            return{
+                ...state,
+                productSimilar: {
+                    state: constant.SUCCESS,
+                    data: action.data,
+                }
+            }
+        }
+        case constant.GET_PRODUCT_SIMILAR_FAILURE:{
+            return{
+                ...state,
+                productSimilar: {
+                    state: constant.FAILURE,
+                    data: [],
                 }
             }
         }

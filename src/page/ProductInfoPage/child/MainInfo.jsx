@@ -1,7 +1,7 @@
 
 
-export default function MainInfo(props){
-    let {_id, image, name, rating, sold, saleprice, price, quality } = props;
+export default function MainInfo(props) {
+    let { _id, image, name, rating, sold, saleprice, price, quality } = props;
     return (
         <div className="maininfo">
             <div className="maininfo-img">

@@ -4,7 +4,11 @@ export default function ProductSection(props){
     let {title, listProduct} = props;
     function createCardProduct(listProduct){
         return listProduct.map(v=>(
-            <CardProduct key={v._id} id={v._id} name={v.name} pricesale={v.after_discount_price} images={v.images}/>
+            <CardProduct key={v._id} 
+                        id={v._id} 
+                        name={v.name}
+                        pricesale={v.after_discount_price} 
+                        images={v.images}/>
             
         ))
     }
