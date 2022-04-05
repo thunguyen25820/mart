@@ -19,9 +19,6 @@ export default function HomePage(){
         if(listCategory.state === constant.LOADING){
             dispatch(categoryAction.getCategory());
         }
-        if(listProduct.state === constant.LOADING){
-            dispatch(productAction.getProduct());
-        }
         if(listHomeInfo.state === constant.LOADING){
             dispatch(appAction.getHomeInfo());
         }

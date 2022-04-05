@@ -5,7 +5,7 @@ export default function ProductSection(props){
     function createCardProduct(listProduct){
         return listProduct.map(v=>(
             <CardProduct key={v._id} 
-                        id={v._id} 
+                        _id={v._id} 
                         name={v.name}
                         pricesale={v.after_discount_price} 
                         images={v.images}/>
@@ -17,7 +17,7 @@ export default function ProductSection(props){
             <div className="product-title">
                 <span>{title}</span>
             </div>
-            <div className="products" >
+            <div className="products">
                 {createCardProduct(listProduct)}
             </div>
         </div>

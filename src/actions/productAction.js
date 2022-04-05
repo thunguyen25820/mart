@@ -1,9 +1,9 @@
 import { constant } from "../constants"
 import { productService } from "../services/productService"
 
-function getProductInfo(){
+function getProductInfo(productid){
     return dispatch => {
-        productService.getProductInfo().then(res => {
+        productService.getProductInfo(productid).then(res => {
             if(res.status === constant.SUCCESS){
                 dispatch(success(res.data));
             }else{
@@ -24,10 +24,10 @@ function getProductInfo(){
     }
 }
 
-function getProductSimilar(){
+function getProductSimilar(productid){
     console.log("getProductSimilar->action");
     return dispatch => {
-        productService.getProductSimilar().then(res => {
+        productService.getProductSimilar(productid).then(res => {
             if(res.status === constant.SUCCESS){
                 dispatch(success(res.data));
             }else{

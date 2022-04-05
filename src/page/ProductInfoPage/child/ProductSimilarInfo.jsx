@@ -11,7 +11,7 @@ export default function ProductSimilarInfo(props){
     function creactCardSimilarProduct(listsimilar){
         return listsimilar.map(v=>(
             <CardProduct key={v._id} 
-                        id={v._id} 
+                        _id={v._id} 
                         name={v.name}
                         pricesale={v.after_discount_price} 
                         images={v.images}/>

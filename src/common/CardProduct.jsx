@@ -1,9 +1,11 @@
 
 export default function CardProduct(property){
-    let{name,pricesale,images} = property;
-
+    let{_id, name,pricesale,images} = property;
+    function transProductInfo(_id){
+        window.location.href = window.location.origin + "/product/" + _id;
+    }
     return(
-        <div className="product-card">
+        <div className="product-card" onClick={()=>{transProductInfo(_id)}}>
             <div className="card-heart">
                 <i className='bx bx-heart'></i>
             </div>

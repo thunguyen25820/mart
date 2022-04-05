@@ -8,22 +8,21 @@ import DescriptionInfo from "./child/DescriptionInfo";
 import ProductSimilarInfo from "./child/ProductSimilarInfo";
 import Header from "../../common/Header";
 import Footer from "../../common/Footer";
-
+import { useParams } from "react-router-dom";
 export default function ProductInfoPage(){
     const dispatch = useDispatch();
     const productInfo  = useSelector(store => store.product.productInfo);
-    const similarproduct = useSelector(store => store.product.productSimilar)
+    const similarproduct = useSelector(store => store.product.productSimilar);
+    let param = useParams();
+    console.log(param.id);
     useEffect(()=>{
         if(productInfo.state === constant.LOADING){
-            dispatch(productAction.getProductInfo());
+            dispatch(productAction.getProductInfo(param.id));
         }else{            
-            console.log("ihijgygsu");
+            console.log("hihi"+productInfo.data);
         }
-
         if(similarproduct.state === constant.LOADING){
-            dispatch(productAction.getProductSimilar());
-        }else{
-            console.log("state # similar product");
+            dispatch(productAction.getProductSimilar(param.id));
         }
     })
     return(
@@ -35,13 +34,15 @@ export default function ProductInfoPage(){
                         image = {productInfo.data.images}
                         name = {productInfo.data.name}
                         sold = {productInfo.data.sold}
-                        saleprice = {productInfo.data.after_discount_price}/>
+                        saleprice = {productInfo.data.after_discount_price}
+                        quality = {productInfo.data.quantity}/>
                     <DetailInfo attributes = {productInfo.data.attributes}/>
                     <DescriptionInfo description = {productInfo.data.description}/>
                     {!similarproduct.data ? <div></div> :
                         <ProductSimilarInfo listsimilar = {similarproduct.data}/>}
-                </div>}
-                <Footer/>
+                </div>
+            }
+            <Footer/>
         </>
     )
 }

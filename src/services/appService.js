@@ -7,6 +7,7 @@ function getHomeInfo(){
     return fetch(constant.URL_API + "/home", requestObj)
             .then(res => res.json())
             .then(data => {
+                console.log("trang home: ",data);
                 return data;
             })
             .catch(error => {

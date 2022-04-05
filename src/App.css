@@ -427,21 +427,48 @@ a {
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
       border-radius: 5px; }
   .maininfo .maininfo-container {
-    width: 60%;
+    width: 50%;
     padding: 25px; }
+    .maininfo .maininfo-container h2 {
+      font-size: 1.8rem; }
     .maininfo .maininfo-container .maininfo-rating {
       margin: 15px 0; }
       .maininfo .maininfo-container .maininfo-rating span {
         color: gray; }
     .maininfo .maininfo-container .maininfo-price {
-      width: 70%;
+      width: 90%;
       padding: 15px;
       border-radius: 5px;
-      background: rgba(0, 0, 0, 0.1); }
+      background: rgba(0, 0, 0, 0.04); }
       .maininfo .maininfo-container .maininfo-price span {
         font-size: 2.3rem;
         padding: 20px;
         color: red; }
+    .maininfo .maininfo-container .maininfo-quality {
+      margin: 15px 0; }
+      .maininfo .maininfo-container .maininfo-quality-title {
+        font-size: 1.2rem; }
+      .maininfo .maininfo-container .maininfo-quality-container {
+        display: inline-block;
+        margin: 15px 0;
+        border: 1px solid rgba(0, 0, 0, 0.2); }
+        .maininfo .maininfo-container .maininfo-quality-container button {
+          width: 40px;
+          height: 40px;
+          font-size: 1.5rem;
+          color: black;
+          font-weight: bold; }
+        .maininfo .maininfo-container .maininfo-quality-container .quality-decrease {
+          border-right: 1px solid rgba(0, 0, 0, 0.2); }
+        .maininfo .maininfo-container .maininfo-quality-container .quality-increase {
+          border-left: 1px solid rgba(0, 0, 0, 0.2); }
+        .maininfo .maininfo-container .maininfo-quality-container input {
+          border: none;
+          outline: none;
+          width: 60px;
+          height: 40px;
+          font-size: 1.3rem;
+          text-align: center; }
     .maininfo .maininfo-container .maininfo-cart {
       margin-top: 30px; }
       .maininfo .maininfo-container .maininfo-cart button {
@@ -453,7 +480,7 @@ a {
 .detailinfo {
   width: 100%;
   background: white;
-  margin: 15px 0;
+  margin: 20px 0;
   border-radius: 5px;
   padding: 15px; }
   .detailinfo .detailinfo-title {
@@ -513,12 +540,14 @@ a {
 .card-similarproduct {
   width: 100%;
   background: white;
-  padding: 15px 0;
   border-radius: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin: 20px 0; }
   .card-similarproduct .card-simip-title {
     font-size: 1.2rem;
-    padding: 0 15px; }
+    padding: 0 15px;
+    padding-top: 15px; }
   .card-similarproduct .card-similarproduct-container {
     width: 100%;
+    height: 100%;
     overflow: hidden; }
