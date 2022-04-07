@@ -30,7 +30,23 @@ function getProductSimilar(productid){
             })
 }
 
+function getProducts(){
+    const requestObj = {
+        method: "GET",
+    }
+    return fetch(constant.URL_API + "/product?page=2", requestObj)
+            .then(res => res.json())
+            .then(data => {
+                console.log("muc sp: ", data)
+                return data;
+            })
+            .catch(error => {
+                return [];
+            })
+}
+
 export const productService = {
     getProductInfo,
     getProductSimilar,
+    getProducts,
 }

@@ -2,6 +2,8 @@
 export default function CardProduct(property){
     let{_id, name,pricesale,images} = property;
     function transProductInfo(_id){
+        // window.location.href => đổi đường dẫn
+        // window.location.origin => lấy tên miền url
         window.location.href = window.location.origin + "/product/" + _id;
     }
     return(

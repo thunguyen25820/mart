@@ -48,7 +48,31 @@ function getProductSimilar(productid){
     }
 }
 
+function getProducts(){
+    console.log("action: lay sp");
+    return dispatch => {
+        productService.getProducts().then(res => {
+            if(res.status === constant.SUCCESS){
+                dispatch(success(res.data));
+            }else{
+                dispatch(failure(res.msg));
+            }
+        })
+    }
+    function success(data){
+        return{
+            type: constant.GET_PRODUCTS_SUCCESS, data
+        }
+    }
+    function failure(msg){
+        return{
+            type: constant.GET_PRODUCTS_FAILURE, msg
+        }
+    }
+}
+
 export const productAction = {
     getProductInfo,
     getProductSimilar,
+    getProducts,
 }

@@ -2,11 +2,11 @@
     display: flex;
     width: 100%;
     &-slider{
-        margin: 12px 0 10px 15px;
+        margin: 20px 0 10px 15px;
         img{
             width: 100%;
             height: 100%;
-            border-radius: 5px;
+            border-radius: 7px;
         }
     }
 }
@@ -15,7 +15,6 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 30px;
-    margin-left: -10px;
     .product-title{
         width: 20%;
         background: linear-gradient(-20deg,#00483d 0.1%,#00917a 70%,#0fe0be 40%);
@@ -28,9 +27,8 @@
         margin-left: 10px;
     }
     .products{
-        display: flex;
         width: 100%;
-        flex-wrap: wrap;
+        overflow: hidden;
     }
     
 }

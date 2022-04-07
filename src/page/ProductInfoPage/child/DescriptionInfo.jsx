@@ -26,7 +26,7 @@ export default function DescriptionInfo(props){
             );
         }
     }
-    function changContentTab(){
+    function changeContentTab(){
         if(currentTab === "description"){
             return(description
                 ?(<div className="tab-content-desc" dangerouslySetInnerHTML={{__html: description}}></div>)
@@ -45,7 +45,7 @@ export default function DescriptionInfo(props){
     return(
         <div className="tab-comm-desc">
             {changeActiveTab()}
-            {changContentTab()}
+            {changeContentTab()}
         </div>
     );
 }

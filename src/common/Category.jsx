@@ -10,8 +10,12 @@ export default function Category(){
     } 
     return(
         !listCategory.data ? <div></div> :
-            <div className="category">
-                {createCategory(listCategory.data)}
+            <div className="category-container">
+                <h3>DANH MỤC SẢN PHẨM</h3>
+                <div className="category">
+                    {createCategory(listCategory.data)}
+                </div>
             </div>
+            
     );
 }

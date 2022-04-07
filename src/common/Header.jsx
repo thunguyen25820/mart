@@ -4,6 +4,12 @@ export default function Header(){
     function onTongleClick(){
         document.querySelector('.dropdown-category').classList.toggle('dropdown-category-show');
     }
+    function transProductPage(){
+        window.location.href = window.location.origin +'/product';
+    }
+    function transHomePage(){
+        window.location.href = window.location.origin +'/home';
+    }
     return(
         <React.Fragment>
             <div className="header">
@@ -41,8 +47,8 @@ export default function Header(){
                                 <Category></Category>
                             </div>
                             {/*  */}
-                            <li>Trang chủ</li>
-                            <li>Sản phẩm</li>
+                            <li onClick={transHomePage}>Trang chủ</li>
+                            <li onClick={transProductPage}>Sản phẩm</li>
                             <li>Tin tức</li>
                             <li>Voucher</li>
                         </ul>

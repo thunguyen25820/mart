@@ -41,8 +41,7 @@ export default function HomePage(){
         dotsClass: "slick-dots slick-thumb", //kieu cua dau cham
         autoplay: true, //tu chuyen trang
         autoplaySpeed: 2000, //toc doi chuyen
-      }
-      
+    }
     return(        
         <>
         {listHomeInfo.state === constant.LOADING?<></>:(

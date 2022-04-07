@@ -195,40 +195,52 @@
     z-index: 100;
 }
 // danh muc san pham
-.category{
-    display: block;
-    width: 340px;
-    height: 100%;
-    border-radius: 5px;
-    background: white;
-    margin-top: 10px;
-    .category-card{
-        display: flex;
-        padding: 5px 10px;
-        img{
-            height: 35px;
-            width: 35px;
-        }
-        .title{
-            align-items: center;
-            padding: 10px 0 0 10px;
-            list-style: none;
-            font-weight: 300;
-        }
+.category-container{
+    display: inline-block;
+    height: fit-content;
+    margin: 20px 0;
+    h3{
+        background: linear-gradient(-20deg,#00483d 0.1%,#00917a 70%,#0fe0be 40%);
+        color: white;
+        padding: 15px;
+        font-size: 1.3rem;
+        text-align: center;
+        border-radius: 10px 10px 0 0;
     }
-    .category-card:hover{
-        box-shadow: 0 0 5px rgba(0,0,0,0.2);
-        .title{
-            font-weight: 500;
+    .category{
+        display: block;
+        width: 340px;
+        height: 100%;
+        border-radius: 0 0 7px 7px;
+        background: white;
+        .category-card{
+            display: flex;
+            padding: 5px 10px;
+            img{
+                height: 35px;
+                width: 35px;
+            }
+            .title{
+                align-items: center;
+                padding: 10px 0 0 10px;
+                list-style: none;
+                font-weight: 300;
+            }
         }
-    }
+        .category-card:hover{
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            .title{
+                font-weight: 500;
+            }
+        }
+    }    
 }
 
 // card product 
 .product-card{
-    width: 248px;
-    height: 350px;
-    margin-left: 10px;
+    width: 285px;
+    height: 400px;
+    margin: 0 8px;
     margin-top: 20px;
     position: relative;
     cursor: pointer;
