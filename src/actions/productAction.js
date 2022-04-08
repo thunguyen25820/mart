@@ -1,71 +1,71 @@
 import { constant } from "../constants"
 import { productService } from "../services/productService"
 
-function getProductInfo(productid){
+function getProductInfo(productid) {
     return dispatch => {
         productService.getProductInfo(productid).then(res => {
-            if(res.status === constant.SUCCESS){
+            if (res.status === constant.SUCCESS) {
                 dispatch(success(res.data));
-            }else{
+            } else {
                 dispatch(failure(res.msg));
             }
         })
     }
-    function success(data){
+    function success(data) {
         console.log("success");
-        return{
+        return {
             type: constant.GET_PRODUCT_SUCCESS, data
         }
     }
-    function failure(msg){
-        return{
+    function failure(msg) {
+        return {
             type: constant.GET_PRODUCT_FAILURE, msg
         }
     }
 }
 
-function getProductSimilar(productid){
+function getProductSimilar(productid) {
     console.log("getProductSimilar->action");
     return dispatch => {
         productService.getProductSimilar(productid).then(res => {
-            if(res.status === constant.SUCCESS){
+            if (res.status === constant.SUCCESS) {
                 dispatch(success(res.data));
-            }else{
+            } else {
                 dispatch(failure(res.msg));
             }
         })
     }
-    function success(data){
+    function success(data) {
         console.log("success_similarproduct");
-        return{
+        return {
             type: constant.GET_PRODUCT_SIMILAR_SUCCESS, data
         }
     }
-    function failure(msg){
-        return{
+    function failure(msg) {
+        return {
             type: constant.GET_PRODUCT_SIMILAR_FAILURE, msg
         }
     }
 }
 
-function getProducts(){
+function getProducts(page) {
     console.log("action: lay sp");
     return dispatch => {
-        productService.getProducts().then(res => {
-            if(res.status === constant.SUCCESS){
-                dispatch(success(res.data));
-            }else{
+        productService.getProducts(page).then(res => {
+            if (res.status === constant.SUCCESS) {
+                dispatch(success(res.data, res.total_page));
+            } else {
                 dispatch(failure(res.msg));
             }
         })
     }
-    function success(data){
-        return{
-            type: constant.GET_PRODUCTS_SUCCESS, data
+    function success(data, total_page) {
+        return {
+            type: constant.GET_PRODUCTS_SUCCESS, data, total_page
         }
     }
-    function failure(msg){
-        return{
+    function failure(msg) {
+        return {
             type: constant.GET_PRODUCTS_FAILURE, msg
         }
     }

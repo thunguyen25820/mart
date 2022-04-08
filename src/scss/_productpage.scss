@@ -10,7 +10,6 @@
             flex-wrap: wrap;
         }
         .dinamicbtn-container{
-            border: 1px solid red;
             text-align: center;
             button{
                 background: white;
@@ -22,6 +21,15 @@
                 margin: 15px;
                 color: rgba(0,0,0,0.8);
                 border-radius: 50%;
+                
+            }
+            button:disabled{
+                background: rgba(0,0,0,0.1);
+                color: rgba(0,0,0,0.5);
+            }
+            .actionbtn{
+                background: orange;
+                color: white;
             }
         }
     }

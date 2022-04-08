@@ -30,11 +30,11 @@ function getProductSimilar(productid){
             })
 }
 
-function getProducts(){
+function getProducts(page){
     const requestObj = {
         method: "GET",
     }
-    return fetch(constant.URL_API + "/product?page=2", requestObj)
+    return fetch(constant.URL_API + "/product?page=" +page, requestObj)
             .then(res => res.json())
             .then(data => {
                 console.log("muc sp: ", data)

@@ -8,19 +8,22 @@ import Category from "../../common/Category";
 import { constant } from "../../constants";
 import CardProduct from "../../common/CardProduct";
 import TransBtnDinamic from "./child/TransBtnDinamic";
+import { useSearchParams } from "react-router-dom";
 export default function ProductPage(){
     const dispatch = useDispatch();
+    let [params]=useSearchParams();
+    let page=params.get("page");
     const listCategory = useSelector(store => store.category.listCategory);
-    const listProduct = useSelector(store => store.product.listProduct) ;
+    const listProduct = useSelector(store => store.product.listProduct);
     useEffect(() => {
         if(listProduct.state === constant.LOADING){
-            dispatch(productAction.getProducts());
+            dispatch(productAction.getProducts(page));
         }
         if(listCategory.state === constant.LOADING){
             dispatch(categoryAction.getCategory());
         }
         else{
-            console.log("load product:");
+            console.log("load product:",listProduct.total_page);
         }
     });
     function Products(listProduct){
@@ -39,11 +42,15 @@ export default function ProductPage(){
                 <Category/>
                 <div className="product-container-dinamic">
                     {(!listProduct.data ? <div></div>
-                                        :<div className="product-container">
-                                            {Products(listProduct.data)}
-                                        </div>
+                                        :(<>
+                                            <div className="product-container">
+                                                {Products(listProduct.data)}
+                                            </div>
+                                            <TransBtnDinamic totalpage = {listProduct.total_page}/>
+                                          </>)
                     )}
-                    <TransBtnDinamic/>
+
+                    
                 </div>
                     
             </div>

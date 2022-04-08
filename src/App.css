@@ -569,7 +569,6 @@ a {
       display: flex;
       flex-wrap: wrap; }
     .productpage-container .product-container-dinamic .dinamicbtn-container {
-      border: 1px solid red;
       text-align: center; }
       .productpage-container .product-container-dinamic .dinamicbtn-container button {
         background: white;
@@ -581,3 +580,9 @@ a {
         margin: 15px;
         color: rgba(0, 0, 0, 0.8);
         border-radius: 50%; }
+      .productpage-container .product-container-dinamic .dinamicbtn-container button:disabled {
+        background: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.5); }
+      .productpage-container .product-container-dinamic .dinamicbtn-container .actionbtn {
+        background: orange;
+        color: white; }

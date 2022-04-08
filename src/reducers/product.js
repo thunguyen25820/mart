@@ -18,6 +18,7 @@ export function product(state = initState, action){
                 listProduct: {
                     state: constant.SUCCESS,
                     data: action.data,
+                    total_page: action.total_page,
                 }
             }
         }
@@ -27,6 +28,7 @@ export function product(state = initState, action){
                 listProduct: {
                     state: constant.FAILURE,
                     data: [],
+                    total_page: 0,
                 }
             }
         }
