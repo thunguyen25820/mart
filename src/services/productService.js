@@ -1,4 +1,5 @@
 import { constant } from "../constants"
+
 function getProductInfo(productid){
     const requestObj = {
         method: "GET",
@@ -30,14 +31,13 @@ function getProductSimilar(productid){
             })
 }
 
-function getProducts(page){
+function getProducts(queryString){
     const requestObj = {
         method: "GET",
     }
-    return fetch(constant.URL_API + "/product?page=" +page, requestObj)
+    return fetch(constant.URL_API + "/product?" +queryString, requestObj)
             .then(res => res.json())
             .then(data => {
-                console.log("muc sp: ", data)
                 return data;
             })
             .catch(error => {

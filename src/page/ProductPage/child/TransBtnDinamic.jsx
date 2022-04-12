@@ -1,14 +1,16 @@
 import { useSearchParams } from "react-router-dom";
+import queryString from "query-string";
 
 export default function TransBtnDinamic(props) {
     let { totalpage } = props;
-    console.log("totalpage", totalpage);
-
+    console.log("hello");
+    let queryObj;
     let currentpage = 1;
-    const [searchParam, setSearchParam] = useSearchParams(1);
+    const [searchParam] = useSearchParams(1);
 
     if (searchParam.get("page") != null) {
         currentpage = parseInt(searchParam.get("page"));
+        queryObj = queryString.parse(searchParam.toString());
     }
 
     function createBtnDinamic(currentpage, totalpage) {
@@ -49,7 +51,8 @@ export default function TransBtnDinamic(props) {
     }
 
     function handlePage(page) {
-        window.location.href = window.location.origin + window.location.pathname + "?page=" + page;
+        let obj = { ...queryObj, page: page }
+        window.location.href = window.location.origin + window.location.pathname + "?" + queryString.stringify(obj);
     }
     return (
         totalpage < 2 ? <div></div>

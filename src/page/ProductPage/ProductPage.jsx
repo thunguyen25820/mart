@@ -12,18 +12,14 @@ import { useSearchParams } from "react-router-dom";
 export default function ProductPage(){
     const dispatch = useDispatch();
     let [params]=useSearchParams();
-    let page=params.get("page");
     const listCategory = useSelector(store => store.category.listCategory);
     const listProduct = useSelector(store => store.product.listProduct);
     useEffect(() => {
         if(listProduct.state === constant.LOADING){
-            dispatch(productAction.getProducts(page));
+            dispatch(productAction.getProducts(params.toString()));
         }
         if(listCategory.state === constant.LOADING){
             dispatch(categoryAction.getCategory());
-        }
-        else{
-            console.log("load product:",listProduct.total_page);
         }
     });
     function Products(listProduct){
